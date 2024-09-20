@@ -8,6 +8,7 @@ import { readToken } from '~/lib/sanity.api'
 import { getClient } from '~/lib/sanity.client'
 import { getPosts, type Post, postsQuery } from '~/lib/sanity.queries'
 import type { SharedPageProps } from '~/pages/_app'
+import post from '~/schemas/post'
 
 export const getStaticProps: GetStaticProps<
   SharedPageProps & {
@@ -30,10 +31,11 @@ export default function IndexPage(
   props: InferGetStaticPropsType<typeof getStaticProps>,
 ) {
   const [posts] = useLiveQuery<Post[]>(props.posts, postsQuery)
+  console.log(posts.length);
   return (
     <Container>
       <section> 
-        <Banner post={posts[1]}/>
+        <Banner post={posts[posts.length - 1]}/>
         {posts.length ? (
           posts.map((post) => <Card key={post._id} post={post} />)
         ) : (

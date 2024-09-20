@@ -23,7 +23,7 @@ export default function Banner({ post }: { post: Post }) {
             </div>
         </div>
         <div className="banner__container">
-            <p className="banner__subtitle">Antwerp</p>
+            <p className="banner__subtitle">Bruges, Belgium</p>
             <h3 className="banner__title">
                 Film editor
             </h3>

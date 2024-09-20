@@ -60,6 +60,7 @@ export default function ProjectSlugRoute(
             src={urlForImage(post.mainImage).url()}
             height={231}
             width={367}
+            quality={60}
             alt=""
           />
         ) : (

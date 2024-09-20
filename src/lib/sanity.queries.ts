@@ -30,7 +30,10 @@ export interface Post {
   _createdAt: string
   title?: string
   slug: Slug
-  subtitle?: string
+  date: string
+  function: String
+  subtitle: string
+  director: string
   description?: string
   mainImage?: ImageAsset
   body: PortableTextBlock[]

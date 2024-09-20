@@ -21,16 +21,22 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'subtitle',
-      title: 'Subtitle',
+      name: 'function',
+      title: 'Function',
       type: 'text',
-      rows: 4,
+      rows: 1,
+    }),
+    defineField({
+      name: 'date',
+      title: 'Date',
+      type: 'text',
+      rows: 1,
     }),
     defineField({
       name: 'description',
       title: 'Description',
       type: 'text',
-      rows: 4,
+      rows: 1,
     }),
     defineField({
       name: 'mainImage',
