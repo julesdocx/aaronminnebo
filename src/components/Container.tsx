@@ -8,7 +8,7 @@ export default function Container({ children }: { children: React.ReactNode }) {
           AaronMinnebo
         </Link>
       <nav className='header__nav'>
-        <Link className='header__button' href="/projects">Projects</Link>
+        <Link className='header__button' href="/projects">Index</Link>
         <Link className='header__button' href="/profile">Profile</Link>
       </nav>
       </header>

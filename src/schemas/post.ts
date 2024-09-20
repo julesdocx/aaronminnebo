@@ -39,6 +39,12 @@ export default defineType({
       rows: 1,
     }),
     defineField({
+      name: 'director',
+      title: 'Director or Collaborator',
+      type: 'text',
+      rows: 1,
+    }),
+    defineField({
       name: 'mainImage',
       title: 'Main image',
       type: 'image',
