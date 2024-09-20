@@ -5,13 +5,17 @@ export default function Container({ children }: { children: React.ReactNode }) {
     <div className="container">
       <header className="header">
         <Link className="header__title" href="/">
-          Next.js + Sanity
+          AaronMinnebo
         </Link>
+      <nav className='header__nav'>
+        <Link className='header__button' href="/projects">Projects</Link>
+        <Link className='header__button' href="/profile">Profile</Link>
+      </nav>
       </header>
       <main>{children}</main>
       <footer className="footer">
         <p className="footer__text">
-          Made with{' '}
+          Designed and developed with {' '}
           <svg
             datasanity-icon="heart-filled"
             width="1em"
@@ -27,7 +31,7 @@ export default function Container({ children }: { children: React.ReactNode }) {
               strokeWidth="1.2"
             ></path>
           </svg>{' '}
-          at Sanity
+          by Jules Docx
         </p>
       </footer>
     </div>

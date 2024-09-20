@@ -21,8 +21,14 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'excerpt',
-      title: 'Excerpt',
+      name: 'subtitle',
+      title: 'Subtitle',
+      type: 'text',
+      rows: 4,
+    }),
+    defineField({
+      name: 'description',
+      title: 'Description',
       type: 'text',
       rows: 4,
     }),

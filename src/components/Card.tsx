@@ -13,7 +13,7 @@ export default function Card({ post }: { post: Post }) {
           src={urlForImage(post.mainImage).width(500).height(300).url()}
           height={300}
           width={500}
-          alt=""
+          alt={post.title}
         />
       ) : (
         <div className="card__cover--none" />
@@ -24,8 +24,9 @@ export default function Card({ post }: { post: Post }) {
             {post.title}
           </a>
         </h3>
-        <p className="card__excerpt">{post.excerpt}</p>
-        <p className="card__date">{formatDate(post._createdAt)}</p>
+        <p className="card__subtitle">{post.subtitle}</p>
+        <p className="card__excerpt">{post.description}</p>
+        {/* <p className="card__date">{formatDate(post._createdAt)}</p> */}
       </div>
     </div>
   )
