@@ -1,8 +1,9 @@
 import Image from 'next/image'
 
-import Video from './Video'
 import { urlForImage } from '~/lib/sanity.image'
 import { type Post } from '~/lib/sanity.queries'
+
+import Video from './Video'
 
 export default function Banner({ post }: { post: Post }) {
   return (

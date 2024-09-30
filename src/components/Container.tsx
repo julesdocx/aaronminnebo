@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 
 export default function Container({ children }: { children: React.ReactNode }) {
   const router = useRouter()
@@ -21,7 +21,7 @@ export default function Container({ children }: { children: React.ReactNode }) {
       <header className="header">
         {/* Title changes depending on whether the path is root or not */}
         <Link href="/" className={`header__title ${isLong ? 'long' : 'short'}`}>
-            {isLong ? '' : <div className='back-button'>&#8592;</div> } AaronMinnebo
+            {isLong ? "AaronMinnebo" : <div className="back-button">&#8592; AaronMinnebo</div>} 
         </Link>
         {/* <nav className="header__nav">
           <Link className="header__button" href="/projects">Projects</Link>
