@@ -3,6 +3,7 @@ import { useLiveQuery } from 'next-sanity/preview'
 
 import Card from '~/components/Card'
 import Banner from '~/components/Banner'
+import Video from '~/components/Video'
 import Container from '~/components/Container'
 import { readToken } from '~/lib/sanity.api'
 import { getClient } from '~/lib/sanity.client'
@@ -31,16 +32,20 @@ export default function IndexPage(
   props: InferGetStaticPropsType<typeof getStaticProps>,
 ) {
   const [posts] = useLiveQuery<Post[]>(props.posts, postsQuery)
-  console.log(posts.length);
   return (
     <Container>
       <section> 
         <Banner post={posts[posts.length - 1]}/>
-        {posts.length ? (
-          posts.map((post) => <Card key={post._id} post={post} />)
-        ) : (
-          <div>error Missing posts, or sanity error</div>
-        )}
+
+        {/* <p className='padding-left'>Projects</p> */}
+        {/* <hr /> */}
+
+          {posts.length ? (
+            posts.reverse().map((post) => <Card key={post._id} post={post} />)
+          ) : (
+            <div>error Missing posts, or sanity error</div>
+          )}
+        {/* <Video/> */}
       </section>
     </Container>
   )

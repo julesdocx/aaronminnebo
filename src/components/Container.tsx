@@ -1,19 +1,35 @@
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 
 export default function Container({ children }: { children: React.ReactNode }) {
+  const router = useRouter()
+  const [isLong, setIsLong] = useState(true)
+
+  useEffect(() => {
+    // Only trigger the animation when transitioning to or from the root
+    if (router.pathname === '/') {
+      setIsLong(true)
+    } else {
+      setIsLong(false)
+    }
+  }, [router.pathname])
+
+
   return (
     <div className="container">
       <header className="header">
-        <Link className="header__title" href="/">
-          AaronMinnebo
+        {/* Title changes depending on whether the path is root or not */}
+        <Link href="/" className={`header__title ${isLong ? 'long' : 'short'}`}>
+            {isLong ? '' : <div className='back-button'>&#8592;</div> } AaronMinnebo
         </Link>
-      <nav className='header__nav'>
-        <Link className='header__button' href="/projects">Index</Link>
-        <Link className='header__button' href="/profile">Profile</Link>
-      </nav>
+        {/* <nav className="header__nav">
+          <Link className="header__button" href="/projects">Projects</Link>
+          <Link className="header__button" href="/profile">Profile</Link>
+        </nav> */}
       </header>
       <main>{children}</main>
-      <footer className="footer">
+            {/* <footer className="footer">
         <p className="footer__text">
           Designed and developed with {' '}
           <svg
@@ -33,7 +49,7 @@ export default function Container({ children }: { children: React.ReactNode }) {
           </svg>{' '}
           by Jules Docx
         </p>
-      </footer>
+      </footer> */}
     </div>
   )
 }

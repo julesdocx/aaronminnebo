@@ -68,9 +68,10 @@ export default function ProjectSlugRoute(
         )}
         <div className="post__container">
           <h1 className="post__title">{post.title}</h1>
-          <p className="post__subtitle">{post.subtitle}</p>
-          <p className="post__excerpt">{post.description}</p>
-          <p className="post__date">{formatDate(post._createdAt)}</p>
+          <p className="post__excerpt">{post.function}</p>
+          <p className="post__subtitle">{post.description}</p>
+          {/* <p className="post__subtitle">{post.director}</p> */}
+          {/* <p className="post__date">{formatDate(post._createdAt)}</p> */}
           <div className="post__content">
             <PortableText value={post.body} />
           </div>

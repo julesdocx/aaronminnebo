@@ -34,13 +34,7 @@ export default function ProjectsPage(
     <Container>
       <section>
         {posts.length ? (
-          posts.map((post) => 
-            <div className='project' key={post._id}>
-              <h2 className='project__title'>{post.title}</h2>
-              <p className='project__subtitle'>{post.subtitle}</p>
-              <p className='project__description'>{post.description}</p>
-            </div> 
-          )
+          posts.reverse().map((post) => <Card key={post._id} post={post} />)
         ) : (
           <div>error Missing posts, or sanity error</div>
         )}
