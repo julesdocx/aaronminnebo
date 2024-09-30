@@ -24,7 +24,7 @@ export default function Container({ children }: { children: React.ReactNode }) {
           {isLong ? (
             "AaronMinnebo"
           ) : (
-            <div className="back-button">{String.fromCharCode(8592)} AaronMinnebo</div>
+            <div className="back-button">&larr; AaronMinnebo</div>
           )}
         </Link>
         {/* <nav className="header__nav">
