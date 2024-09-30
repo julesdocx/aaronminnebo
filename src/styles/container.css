@@ -44,7 +44,7 @@ main {
   flex-direction: row;
   font-weight: 800;
   font-family: var(--font-family-sans);
-  font-size: var(--font-size-3);
+  font-size: var(--font-size-4);
   line-height: var(--line-height-1);
   padding-left: var(--space-2);
   margin: 0;

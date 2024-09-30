@@ -21,7 +21,11 @@ export default function Container({ children }: { children: React.ReactNode }) {
       <header className="header">
         {/* Title changes depending on whether the path is root or not */}
         <Link href="/" className={`header__title ${isLong ? 'long' : 'short'}`}>
-            {isLong ? "AaronMinnebo" : <div className="back-button">&#8592; AaronMinnebo</div>} 
+          {isLong ? (
+            "AaronMinnebo"
+          ) : (
+            <div className="back-button">{String.fromCharCode(8592)} AaronMinnebo</div>
+          )}
         </Link>
         {/* <nav className="header__nav">
           <Link className="header__button" href="/projects">Projects</Link>
