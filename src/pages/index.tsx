@@ -39,12 +39,13 @@ export default function IndexPage(
 
         {/* <p className='padding-left'>Projects</p> */}
         {/* <hr /> */}
+        <Card key={posts[1]._id} post={posts[1]} />
 
-          {posts.length ? (
+          {/* {posts.length ? (
             posts.reverse().map((post) => <Card key={post._id} post={post} />)
           ) : (
             <div>error Missing posts, or sanity error</div>
-          )}
+          )} */}
         {/* <Video/> */}
       </section>
     </Container>

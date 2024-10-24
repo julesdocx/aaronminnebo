@@ -6,7 +6,7 @@
   justify-content: space-between;
   flex-direction: column;
   padding: var(--space-2);
-  padding: 9px;
+  padding: 8px 18px;
   position: relative;
 }
 
@@ -29,8 +29,8 @@
 
 .card .card__title {
   font-family: var(--font-family-sans);
-  color: var(--white);
-  font-weight: 800;
+  color: var(--black);
+  font-weight: 600;
   font-size: var(--font-size-3);
   letter-spacing: -0.025em;
   margin:  0;
@@ -56,7 +56,7 @@
 }
 
 .card .card__link {
-  color: var(--white);
+  color: var(--black);
   text-decoration: none;
 }
 
@@ -98,7 +98,7 @@
 
 @media (min-width: 800px) {
   .card {
-    border-top: 1px solid var(--white);
+    border-bottom: 1px solid var(--black);
     flex-direction: row;
   }
 
@@ -122,8 +122,8 @@
     z-index: -1;
   }
   .card:hover .card__cover {
-      display: block;
-      opacity: 1;
+      /* display: block;
+      opacity: 1; */
       z-index: 1;
   }
 }

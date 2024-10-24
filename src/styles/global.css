@@ -40,7 +40,7 @@
   --line-height-11: 96px;
   --line-height-12: 128px;
 
-  --white: #f4f4f4;
+  --white: #f2f2f2;
   --black: #0b0b0b;
   --gray-200: #040405;
   --gray-600: #6e7683;
@@ -57,7 +57,7 @@ html {
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  color: var(--white);
+  color: var(--black);
 }
 
 body {

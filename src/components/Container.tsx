@@ -27,10 +27,11 @@ export default function Container({ children }: { children: React.ReactNode }) {
             <div className="back-button">&larr; AaronMinnebo</div>
           )}
         </Link>
-        {/* <nav className="header__nav">
+
+        <nav className="header__nav">
           <Link className="header__button" href="/projects">Projects</Link>
-          <Link className="header__button" href="/profile">Profile</Link>
-        </nav> */}
+          {/* <Link className="header__button" href="/profile">--</Link> */}
+        </nav>
       </header>
       <main>{children}</main>
             {/* <footer className="footer">
