@@ -30,7 +30,7 @@ main {
 }
 
 .header {
-    background-color: var(--white);
+  background-color: var(--white);
   width: 350px;
   /* backdrop-filter: blur(5px); */
   z-index: 10;
@@ -85,7 +85,7 @@ main {
   .container {
     width: 350px;
     display: flex;
-    align-items: end;
+    align-items: flex-end;
     flex-direction: column-reverse;
     height: 100vh;
     margin-right: 0 auto;

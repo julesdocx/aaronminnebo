@@ -16,6 +16,7 @@ export default function Card({ post }: { post: Post }) {
         <p className='card__caption'> {post.director}</p>
         {/* <p className="card__date">{formatDate(post._createdAt)}</p> */}
       </div>
+      
       {post.mainImage ? (
         <Image
           className="card__cover"
