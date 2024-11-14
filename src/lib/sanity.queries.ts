@@ -32,7 +32,6 @@ export interface Post {
   slug: Slug
   date: string
   function: String
-  subtitle: string
   director: string
   description?: string
   mainImage?: ImageAsset

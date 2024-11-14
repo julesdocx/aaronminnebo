@@ -13,7 +13,6 @@ import {
 import { previewUrl } from 'sanity-plugin-iframe-pane/preview-url'
 import { vercelDeployTool } from 'sanity-plugin-vercel-deploy'
 
-
 // see https://www.sanity.io/docs/api-versioning for how versioning works
 import {
   apiVersion,

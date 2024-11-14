@@ -1,13 +1,14 @@
 import '~/styles/global.css'
-import '~/styles/projects.css'
 import '~/styles/container.css'
 import '~/styles/banner.css'
-import '~/styles/card.css'
-import '~/styles/post.css'
+import '~/styles/carousel.css'
+import '~/styles/modal.css'
 
 import type { AppProps } from 'next/app'
 import { IBM_Plex_Mono, Inter, Libre_Baskerville } from 'next/font/google'
 import { lazy } from 'react'
+
+import { RecoilRoot } from 'recoil'
 
 export interface SharedPageProps {
   draftMode: boolean
@@ -51,9 +52,11 @@ export default function App({
         `}
       </style>
       {draftMode ? (
-        <PreviewProvider token={token}>
-          <Component {...pageProps} />
-        </PreviewProvider>
+        <RecoilRoot>
+          <PreviewProvider token={token}>
+            <Component {...pageProps} />
+          </PreviewProvider>
+        </RecoilRoot>
       ) : (
         <Component {...pageProps} />
       )}

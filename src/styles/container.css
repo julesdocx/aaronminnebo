@@ -1,33 +1,32 @@
-.header__nav {
-    display: flex;
-    z-index: 10;
-    font-size: var( --font-size-1);
-    margin-right: 8px;
-    padding: 6px 4px;
-}
-
 .header__button {
-    color: rgb(255, 255, 255);
-    font-weight: 600;
-    padding-left: 16px;
-    text-decoration: none;
-    color: var(--white);
+  color: var(--black);
+  font-weight: 600;
+  padding-left: 16px;
+  text-decoration: none;
+  color: var(--black);
 }
-
 
 /* Layout */
 .container {
   margin: 0 auto;
+  justify-content: space-between;
 }
 
 main {
+  background-color: var(--white);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  padding-top: 8px;
+  width: 350px;
   /* margin-top: 45px; */
 }
 
 .header {
+  background-color: var(--white);
+  width: 350px;
   /* backdrop-filter: blur(5px); */
   z-index: 10;
-  display: flex;
+  display: fixed;
   align-items: center;
   justify-content: space-between;
   z-index: 10;
@@ -37,6 +36,7 @@ main {
   right: 0;
   top: 0;
   padding: 6px 4px;
+  margin-bottom: 16px;
 }
 
 .header .header__title {
@@ -49,21 +49,15 @@ main {
   padding-left: var(--space-2);
   margin: 0;
   letter-spacing: -0.025em;
-  padding: 10px;
+  padding: 10px 18px;
   transition: all 0.4s ease;
   text-decoration: none;
-  color: var(--white);
+  color: var(--black);
   cursor: pointer;
 }
 
 .back-button {
   margin-right: 8px;
-}
-
-.footer {
-  display: flex;
-  justify-content: flex-end;
-  padding: 0 var(--space-3);
 }
 
 .footer .footer__text {
@@ -76,8 +70,11 @@ main {
 
 @media (min-width: 575px) {
   .container {
-    max-width: var(--max-width-1);
-    padding: 0 ;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin-right: 0 auto;
   }
 
   main {
@@ -100,14 +97,14 @@ main {
     /* backdrop-filter: blur(2px); */
     position: unset;
     border-bottom: none;
-    margin: var(--space-4) 0;
-    padding:  0;
+    margin-top: var(--space-4);
+    padding: 0;
     /* background: rgba(255, 255, 255, 0.38); */
-    /* border-radius: 50px; */
+    border-radius: 50px;
   }
   .header:hover {
     /* backdrop-filter: blur(10px); */
-    transition: 0.3s ease-in-out ;
+    transition: 0.3s ease-in-out;
   }
 
   .header .header__title {

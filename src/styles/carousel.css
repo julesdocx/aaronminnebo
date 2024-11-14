@@ -1,0 +1,8 @@
+.carousel__interface {
+  padding: 12px 16px;
+}
+
+.carousel__controls {
+  display: flex;
+  justify-content: center;
+}
