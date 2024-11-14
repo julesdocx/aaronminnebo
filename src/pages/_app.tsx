@@ -7,7 +7,6 @@ import '~/styles/modal.css'
 import type { AppProps } from 'next/app'
 import { IBM_Plex_Mono, Inter, Libre_Baskerville } from 'next/font/google'
 import { lazy } from 'react'
-
 import { RecoilRoot } from 'recoil'
 
 export interface SharedPageProps {

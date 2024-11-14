@@ -28,7 +28,7 @@ export default function Video({
           onEnded={onVideoEnd} // Call onVideoEnd when video ends
           className="banner__cover"
         >
-          <source src={videoUrl} type="video/mp4" />
+          <source src={`videos/${videoUrl}`} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>

@@ -1,20 +1,13 @@
 import { useState } from 'react'
+
+import { type Post } from '~/lib/sanity.queries'
+import { filterItemsByVideoExistence } from '~/utils'
+
+import Spotlight from '../../public/spotlight_videos.json';
 import Accordion from './Accordion'
 import Carousel from './Carousel'
-import { type Post } from '~/lib/sanity.queries'
 
-const videos = [
-  {
-    title: "Soundtrack to Coup D'etat",
-    videoUrl: './video/Soundtrack to coup detat website.mp4',
-  },
-  { title: 'The Invasion', videoUrl: './video/THEINVASION_WEBSITE.mp4' },
-  {
-    title: 'Songs of Love and Hate',
-    videoUrl: './video/Songs of love and hate website.mov',
-  },
-  { title: "Vader's Huis", videoUrl: './video/vadershuis.mov' },
-]
+const videos = filterItemsByVideoExistence(Spotlight.videos); 
 
 export default function Modal({ posts }: { posts: Post[] }) {
   // State to toggle between Carousel and Accordion view
