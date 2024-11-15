@@ -3,6 +3,7 @@ import '~/styles/container.css'
 import '~/styles/banner.css'
 import '~/styles/carousel.css'
 import '~/styles/modal.css'
+import '~/styles/accordion.css'
 
 import type { AppProps } from 'next/app'
 import { IBM_Plex_Mono, Inter, Libre_Baskerville } from 'next/font/google'
