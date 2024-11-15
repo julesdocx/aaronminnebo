@@ -16,8 +16,7 @@
 /out/
 
 # public
-/public
-/public/*
+/public/videos
 
 # production
 /build

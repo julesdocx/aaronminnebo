@@ -1,0 +1,21 @@
+{
+  "videos": [
+    {
+      "title": "Soundtrack to Coup D'etat",
+      "videoUrl": "Soundtrack to coup detat website.mp4"
+    },
+    { 
+      "title": "The Invasion", 
+      "videoUrl": "THEINVASION_WEBSITE.mp4"
+    },
+    {
+      "title": "Songs of Love and Hate",
+      "videoUrl": "Songs of love and hate website.mov"
+    },
+    { 
+      "title": "Vader's Huis",
+      "videoUrl": "vadershuis.mov" 
+    }
+
+]
+}

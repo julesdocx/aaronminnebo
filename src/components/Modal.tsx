@@ -17,7 +17,12 @@ export default function Modal({ posts }: { posts: Post[] }) {
   const handleToggleView = () => {
     setShowAccordion((prev) => !prev)
   }
-
+        
+        
+  // TODO: showAccordion toggle state animation
+  // TODO: Carousel fade animations
+  //       - showAccordion Carousel activation transition (on/off fade)
+  //       - Video component source change transition (video1 -> video2 fade or slide) 
   return (
     <div className="modal">
       {/* Conditionally render Carousel or Accordion based on showAccordion */}
