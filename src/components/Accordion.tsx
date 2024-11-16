@@ -10,10 +10,9 @@ export default function Accordeon({ posts }: { posts: Post[] }) {
   };
 
   return (
-    <div className="Accordion">
+    <div className="accordion">
       {posts.length ? (
         posts
-          .reverse()
           .map((post, index) => <AccordionItem 
             key={post._id} 
             post={post}

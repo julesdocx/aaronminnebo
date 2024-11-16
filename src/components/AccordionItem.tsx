@@ -1,7 +1,7 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import Image from 'next/image';
 import { PortableText } from '@portabletext/react';
-
 import { urlForImage } from '~/lib/sanity.image';
 import { type Post } from '~/lib/sanity.queries';
 
@@ -24,8 +24,13 @@ export default function AccordionItem({
         <p className="accordion-item__caption">{post.director}</p>
       </div>
 
-      {isOpen && (
-        <div className="accordion-item__content">
+      <motion.div
+        className="accordion-item__content"
+        animate={isOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
+        transition={{ duration: 3, easing: 'ease-in-out' }}
+        style={{ overflow: 'hidden' }}
+      >
+        <div>
           <h4 className="accordion__description">{post.description}</h4>
           <div className="accordion__body">
             <PortableText value={post.body} />
@@ -43,7 +48,7 @@ export default function AccordionItem({
             <div className="accordion-item__cover--none" />
           )}
         </div>
-      )}
+      </motion.div>
     </div>
   );
 }

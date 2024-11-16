@@ -5,14 +5,10 @@
 
 .accordion-item {
     color: black;
-    padding: 12px 0px;
-    border-top: 1px solid black;
-    padding: 6px;
+    padding: 6px 12px;
+    border-top: 1px dotted black;
     cursor: pointer;
-}
-
-.accordion-item:hover {
-    background-color: #e0dfdfe2;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
 }
 
 .accordion-item__header {
@@ -31,6 +27,7 @@
 }
 
 .accordion-item__caption {
+    margin: 0px;
     color: var(black);
     font-size: var(--font-size-1);
 }
@@ -48,6 +45,15 @@
 .accordion-item__cover {
     width: 100%;
     height: 100%;
+}
+
+.accordion-item__content {
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+  padding: 0 16px; 
+}
+
+.accordion-item.is-open .accordion-item__content {
+  padding: 16px;
 }
 
 a {

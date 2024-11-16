@@ -25,11 +25,11 @@ export default function Video({
           loop={false}
           muted
           preload="auto"
-          onEnded={onVideoEnd} // Call onVideoEnd when video ends
+          onEnded={onVideoEnd}
           className="banner__cover"
         >
-          <source src={`videos/${videoUrl}`} type="video/mp4" />
-          Your browser does not support the video tag.
+          {/* <source src={`videos/${videoUrl}`} type="video/mp4" />
+          Your browser does not support the video tag. */}
         </video>
       </div>
     </div>

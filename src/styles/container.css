@@ -12,12 +12,11 @@
   justify-content: space-between;
 }
 
+body {
+  overflow: hidden;
+}
+
 main {
-  background-color: var(--white);
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-  padding-top: 8px;
-  width: 350px;
   /* margin-top: 45px; */
 }
 
@@ -73,7 +72,6 @@ main {
     width: 350px;
     display: flex;
     flex-direction: column;
-    height: 100vh;
     margin-right: 0 auto;
   }
 
