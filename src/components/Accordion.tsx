@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import AccordionItem from './AccordionItem';
+
 import { type Post } from '~/lib/sanity.queries';
+
+import AccordionItem from './AccordionItem';
 
 export default function Accordeon({ posts }: { posts: Post[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);

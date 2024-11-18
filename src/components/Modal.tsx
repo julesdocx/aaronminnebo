@@ -1,12 +1,14 @@
-import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
+import { useEffect,useState } from 'react';
+
+import { type Post } from '~/lib/sanity.queries';
+import { filterItemsByVideoExistence } from '~/utils';
+import { SpotlightItem } from '~/utils/types';
+
+import Spotlight from '../../public/spotlight_videos.json';
 import Accordion from './Accordion';
 import Carousel from './Carousel';
 import Video from './Video';
-import { type Post } from '~/lib/sanity.queries';
-import { SpotlightItem } from '~/utils/types';
-import Spotlight from '../../public/spotlight_videos.json';
-import { filterItemsByVideoExistence } from '~/utils';
 
 export default function Modal({ posts }: { posts: Post[] }) {
   const [showAccordion, setShowAccordion] = useState(false);
@@ -52,6 +54,7 @@ export default function Modal({ posts }: { posts: Post[] }) {
           currentVideoIndex={currentVideoIndex}
           videoList={videoList}
           onVideoChange={handleVideoChange}
+          showAccordion={showAccordion}
         />
         <motion.button
           whileTap={{ scale: 0.95 }}
