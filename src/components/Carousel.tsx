@@ -1,79 +1,51 @@
-import { useEffect, useState } from 'react';
-
-import { filterItemsByVideoExistence } from '~/utils';
+import React from 'react';
 import { SpotlightItem } from '~/utils/types';
 
-import Spotlight from '../../public/spotlight_videos.json' ;
-import Video from './Video';
-
-export default function Carousel() {
-  // Static array of video obj:ects with titles and URLs
-  const [existingFiles, setExistingFiles] = useState<SpotlightItem[]>([]);
-
-  useEffect(() => {
-    const spotlightItems = Spotlight.videos;
-    // Only call this in an async function or useEffect
-    (async () => {
-        const files = await filterItemsByVideoExistence(spotlightItems, true);
-        setExistingFiles(files);
-        console.log(files);
-    })();
-  }, []);
-
-  const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
-
-  // Function to change the current video index
-  const handleVideoChange = (index: number) => {
-    setCurrentVideoIndex(index)
-  }
-
-  // Function to advance to the next video automatically
-  const handleNextVideo = () => {
-    setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % existingFiles.length)
-  }
-
-  // Only attempt to access `currentVideo` if `existingFiles` is non-empty
-  const currentVideo = existingFiles.length > 0 ? existingFiles[currentVideoIndex] : null;
-  console.log(`currentVideo: ${currentVideo}`);
-
+export default function Carousel({
+  currentVideoIndex,
+  videoList,
+  onVideoChange,
+}: {
+  currentVideoIndex: number;
+  videoList: SpotlightItem[];
+  onVideoChange: (index: number) => void;
+}) {
   return (
     <div className="carousel">
-      {/* Directly render Video component here */}
-      {currentVideo ? (
-        <Video videoUrl={currentVideo.videoUrl} onVideoEnd={handleNextVideo} />
-      ) : (
-        <p>No videos available.</p>
-      )}
-
       <div className="carousel__interface">
         <div className="carousel__controls">
           <button
             onClick={() =>
-              handleVideoChange(
-                (currentVideoIndex - 1 + existingFiles.length) % existingFiles.length,
+              onVideoChange(
+                (currentVideoIndex - 1 + videoList.length) % videoList.length
               )
             }
-          ></button>
+          >
+            Previous
+          </button>
           <div className="carousel__pagination">
-            {existingFiles.map((_, index) => (
+            {videoList.map((_, index) => (
               <input
                 key={index}
                 type="radio"
                 name="carousel-pagination"
                 checked={index === currentVideoIndex}
-                onChange={() => handleVideoChange(index)}
+                onChange={() => onVideoChange(index)}
               />
             ))}
           </div>
           <button
             onClick={() =>
-              handleVideoChange((currentVideoIndex + 1) % existingFiles.length)
+              onVideoChange((currentVideoIndex + 1) % videoList.length)
             }
-          ></button>
+          >
+            Next
+          </button>
         </div>
-
-        {currentVideo && <div className="carousel__title">{currentVideo.title}</div>}      
-        </div>
+        {videoList[currentVideoIndex] && (
+          <div className="carousel__title">{videoList[currentVideoIndex].title}</div>
+        )}
+      </div>
     </div>
-  )
+  );
 }

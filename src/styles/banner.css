@@ -1,5 +1,5 @@
 .banner {
-  position: absolute;
+  position: fixed;
   user-select: none;
   overflow: hidden;
   height: 100vh;
