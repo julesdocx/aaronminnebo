@@ -17,7 +17,6 @@ export default function Carousel({
     <div className="carousel">
     {showAccordion ? 
       (
-      
         <div className="carousel__interface">
           <div className="carousel__controls">
             <button
