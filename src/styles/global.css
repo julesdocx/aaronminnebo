@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'SF Pro';
+  src: url('/fonts/SF-Pro.ttf') format('truetype');
+}
+
 :root {
   --space-0: 0;
   --space-1: 4px;
@@ -10,15 +15,13 @@
   --space-8: 136px;
   --space-9: 220px;
 
-  --font-family-sans: Inter;
-  --font-family-serif: Libre_Baskerville;
-  --font-family-mono: IMB Plex Mono;
+  --font-family-sans: SF Pro;
 
-  --font-size-0: 12px;
-  --font-size-1: 14px;
-  --font-size-2: 16px;
-  --font-size-3: 18px;
-  --font-size-4: 20px;
+  --font-size-0: 9px;
+  --font-size-1: 12px;
+  --font-size-2: 14px;
+  --font-size-3: 16px;
+  --font-size-4: 18px;
   --font-size-5: 24px;
   --font-size-6: 30px;
   --font-size-7: 36px;
@@ -53,7 +56,7 @@
 
 html {
   background-color: var(--black);
-  font-family: var(--font-family-serif), var(--font-family-serif), sans-serif;
+  font-family: var(--font-family-sans), 'segoe UI', Arial, sans-serif;
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   text-size-adjust: 100%;
