@@ -1,78 +1,61 @@
-:root {
-  --space-0: 0;
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 20px;
-  --space-5: 32px;
-  --space-6: 52px;
-  --space-7: 84px;
-  --space-8: 136px;
-  --space-9: 220px;
-
-  --font-family-sans: Inter;
-  --font-family-serif: Libre_Baskerville;
-  --font-family-mono: IMB Plex Mono;
-
-  --font-size-0: 12px;
-  --font-size-1: 14px;
-  --font-size-2: 16px;
-  --font-size-3: 18px;
-  --font-size-4: 20px;
-  --font-size-5: 24px;
-  --font-size-6: 30px;
-  --font-size-7: 36px;
-  --font-size-8: 48px;
-  --font-size-9: 60px;
-  --font-size-10: 72px;
-
-  --line-height-0: 16px;
-  --line-height-1: 20px;
-  --line-height-2: 24px;
-  --line-height-3: 28px;
-  --line-height-4: 28px;
-  --line-height-5: 32px;
-  --line-height-6: 36px;
-  --line-height-7: 40px;
-  --line-height-8: 48px;
-  --line-height-9: 60px;
-  --line-height-10: 72px;
-  --line-height-11: 96px;
-  --line-height-12: 128px;
-
-  --white: #f4f4f4;
-  --black: #0b0b0b;
-  --gray-200: #040405;
-  --gray-600: #6e7683;
-  --blue-600: #1e61cd;
-  --magenta-100: #f9d7eb;
-
-  --max-width-0: 320px;
-  --max-width-1: 768px;
-}
-
-html {
-  background-color: var(--black);
-  font-family: var(--font-family-serif), var(--font-family-serif), sans-serif;
-  -webkit-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-  color: var(--white);
-}
-
 body {
-  margin: 0;
+    margin: 0px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12px;
 }
 
-hr {
-  border-top: 1px solid var(--white)
+h1 {
+    margin: 12px 0px;
+    font-size: 18px;
+    font-family: Arial;
+    font-weight: 400;
 }
 
-.padding-left {
-  padding-left: 12px;
+h2 {
+    margin: 12px 0px;
+    font-size: 18px;
+    font-family: Arial;
+    font-weight: 400;
 }
 
-strong {
-  font-family: var(--font-family-sans);
+h3 {
+    font-size: 16px;
+    margin: 4px 0px;
+    font-weight: 400;
+    font-style: italic;
 }
 
+p {
+    font-size: 12px;
+    margin: 0px 0px 8px 0px;
+}
+
+#mainDiv {
+    display: grid;
+    grid-template-columns: var(--work-width, 1fr) var(--personal-width, 1fr);
+    gap: 12px;
+}
+
+#mainDiv.work-collapsed {
+    --work-width: max-content;
+}
+
+#mainDiv.personal-collapsed {
+    --personal-width: max-content;
+}
+
+#mainDiv.both-collapsed {
+    --work-width: max-content;
+    --personal-width: max-content;
+}
+
+header {
+    padding-right: 12px;
+}
+
+@media (max-width: 750px) {
+   #mainDiv {
+    display: flex;
+    flex-direction: column;
+   }
+}

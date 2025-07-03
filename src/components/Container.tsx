@@ -1,10 +1,12 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
+import { motion, AnimatePresence } from 'motion/react'
 
 export default function Container({ children }: { children: React.ReactNode }) {
   const router = useRouter()
   const [isLong, setIsLong] = useState(true)
+  const [isHeaderExpanded, setIsHeaderExpanded] = useState(true)
 
   useEffect(() => {
     // Only trigger the animation when transitioning to or from the root
@@ -15,45 +17,82 @@ export default function Container({ children }: { children: React.ReactNode }) {
     }
   }, [router.pathname])
 
+  const toggleHeader = () => {
+    setIsHeaderExpanded(!isHeaderExpanded)
+  }
 
   return (
-    <div className="container">
+    <div className={`container ${!isHeaderExpanded ? 'header-collapsed' : ''}`}>
       <header className="header">
-        {/* Title changes depending on whether the path is root or not */}
-        <Link href="/" className={`header__title ${isLong ? 'long' : 'short'}`}>
-          {isLong ? (
-            "AaronMinnebo"
-          ) : (
-            <div className="back-button">&larr; AaronMinnebo</div>
+        <div 
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', cursor: 'pointer', marginBottom:'4px' }}
+          onClick={toggleHeader}
+        >
+          <h1 className="header__title">
+              Aaron Minnebo
+          </h1>
+          {/* Toggle Slider */}
+          <div 
+            className="toggle-slider"
+            style={{
+              width: '20px',
+              height: '10px',
+              backgroundColor: 'white',
+              border: isHeaderExpanded ? '1px solid black' : '1px solid grey',
+              opacity: '30%',
+              borderRadius: '10px',
+              position: 'relative',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease'
+            }}
+          >
+            <motion.div 
+              className="toggle-circle"
+              style={{
+                width: '8px',
+                height: '8px',
+                borderRadius: '50%',
+                position: 'absolute',
+                top: '1px',
+                left: isHeaderExpanded ? '11px' : '1px',
+                transition: 'left 0.3s ease'
+              }}
+              variants={{
+                hover: {
+                  backgroundColor: 'black',
+                  transition: { duration: 0.2, ease: "easeOut" }
+                }
+              }}
+              animate={{
+                backgroundColor: isHeaderExpanded ? 'black' : 'grey'
+              }}
+              whileHover="hover"
+            />
+          </div>
+        </div>
+        
+        <AnimatePresence>
+          {isHeaderExpanded && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ 
+                duration: 0.4, 
+                ease: "easeInOut",
+                opacity: { duration: 0.3 }
+              }}
+              style={{ overflow: 'hidden' }}
+            >
+              <div style={{ padding: '10px 0' }}>
+                <p>Brussels / Antwerp<br />aaron.minnebo @ email.com</p>
+                {/* <p>I'm a Belgian film editor with a fresh perspective and a deep passion for storytelling. I graduated in 2023 with a Master's degree in Editing from RITCS School of Arts. Since graduating, I've had the privilege of working on several short films, both national and international, and assisting acclaimed filmmakers and editors. These experiences have honed my skills and deepened my understanding of the collaborative nature of filmmaking. </p> */}
+              </div>
+            </motion.div>
           )}
-        </Link>
-        {/* <nav className="header__nav">
-          <Link className="header__button" href="/projects">Projects</Link>
-          <Link className="header__button" href="/profile">Profile</Link>
-        </nav> */}
+        </AnimatePresence>
       </header>
       <main>{children}</main>
-            {/* <footer className="footer">
-        <p className="footer__text">
-          Designed and developed with {' '}
-          <svg
-            datasanity-icon="heart-filled"
-            width="1em"
-            height="1em"
-            viewBox="0 0 25 25"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M17 16C15.8 17.3235 12.5 20.5 12.5 20.5C12.5 20.5 9.2 17.3235 8 16C5.2 12.9118 4.5 11.7059 4.5 9.5C4.5 7.29412 6.1 5.5 8.5 5.5C10.5 5.5 11.7 6.82353 12.5 8.14706C13.3 6.82353 14.5 5.5 16.5 5.5C18.9 5.5 20.5 7.29412 20.5 9.5C20.5 11.7059 19.8 12.9118 17 16Z"
-              fill="currentColor"
-              stroke="currentColor"
-              strokeWidth="1.2"
-            ></path>
-          </svg>{' '}
-          by Jules Docx
-        </p>
-      </footer> */}
     </div>
   )
 }
