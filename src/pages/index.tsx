@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from 'motion/react'
 
 import Card from '~/components/Card'
 import Container from '~/components/Container'
-import Video from '~/components/Video'
 import { readToken } from '~/lib/sanity.api'
 import { getClient } from '~/lib/sanity.client'
 import { getPosts, type Post, postsQuery } from '~/lib/sanity.queries'
