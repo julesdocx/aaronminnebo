@@ -25,7 +25,8 @@ export default function Container({ children }: { children: React.ReactNode }) {
     <div className={`container ${!isHeaderExpanded ? 'header-collapsed' : ''}`}>
       <header className="header">
         <div 
-          style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', cursor: 'pointer', marginBottom:'4px' }}
+          className='header_container'
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', cursor: 'pointer' }}
           onClick={toggleHeader}
         >
           <h1 className="header__title">

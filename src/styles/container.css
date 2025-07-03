@@ -9,9 +9,17 @@
     --header-width: max-content;
 }
 
+header {
+    padding-right: 12px;
+}
+
 @media (max-width: 750px) {
    .container {
     display: flex;
     flex-direction: column;
    }
+   header {
+    padding-right: 0px;
+    padding-bottom: 12px;
+    }
 }

@@ -49,9 +49,6 @@ p {
     --personal-width: max-content;
 }
 
-header {
-    padding-right: 12px;
-}
 
 @media (max-width: 750px) {
    #mainDiv {
