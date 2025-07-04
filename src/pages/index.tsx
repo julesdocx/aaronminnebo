@@ -55,11 +55,9 @@ export default function IndexPage(
       <div id='mainDiv' className={getMainClasses()}>
       <section> 
         <div 
-          style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', cursor: 'pointer' }}
+          style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer' }}
           onClick={toggleWork}
         >
-          <h2>Work</h2>
-          {/* Toggle Slider */}
           <div 
             className="toggle-slider"
             style={{
@@ -97,6 +95,8 @@ export default function IndexPage(
               whileHover="hover"
             />
           </div>
+          <h2>Work</h2>
+          {/* Toggle Slider */}
         </div>
         
         <AnimatePresence>
@@ -126,11 +126,9 @@ export default function IndexPage(
       
       <section>
         <div 
-          style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', cursor: 'pointer' }}
+          style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer' }}
           onClick={togglePersonal}
         >
-          <h2>Personal</h2>
-          {/* Toggle Slider */}
           <div 
             className="toggle-slider"
             style={{
@@ -168,6 +166,8 @@ export default function IndexPage(
               whileHover="hover"
             />
           </div>
+          <h2>Personal</h2>
+          {/* Toggle Slider */}
         </div>
         
         <AnimatePresence>

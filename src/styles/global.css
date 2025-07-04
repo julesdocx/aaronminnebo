@@ -36,23 +36,30 @@ p {
     gap: 12px;
 }
 
-#mainDiv.work-collapsed {
-    --work-width: max-content;
-}
-
-#mainDiv.personal-collapsed {
-    --personal-width: max-content;
-}
-
-#mainDiv.both-collapsed {
-    --work-width: max-content;
-    --personal-width: max-content;
-}
-
-
 @media (max-width: 750px) {
    #mainDiv {
     display: flex;
     flex-direction: column;
+   }
+   h1 {
+    margin: 6px 0px;
+   }
+   h2 {
+    margin: 6px 0px;
+   }
+   #mainDiv {
+    gap: 0px;
+    }
+    main.work-collapsed {
+    --work-width: max-content;
+   }
+
+   main.personal-collapsed {
+    --personal-width: max-content;
+   }
+
+   main.both-collapsed {
+    --work-width: max-content;
+    --personal-width: max-content;
    }
 }

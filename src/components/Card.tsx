@@ -23,11 +23,7 @@ export default function Card({ post }: { post: Post }) {
     >
       <div className="card__container">
         <div className="card__header">
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px' }}>
-            <h3 className="card__title">
-                {post.title}
-            </h3>
-            {/* Toggle Slider */}
+          <div style={{ display: 'flex', alignItems: 'start', gap: '12px' }}>
             <div 
               className="toggle-slider"
               style={{
@@ -39,7 +35,8 @@ export default function Card({ post }: { post: Post }) {
                 borderRadius: '10px',
                 position: 'relative',
                 cursor: 'pointer',
-                transition: 'all 0.3s ease'
+                transition: 'all 0.3s ease',
+                marginTop: '8px'
               }}
             >
               <motion.div 
@@ -64,8 +61,12 @@ export default function Card({ post }: { post: Post }) {
                 }}
               />
             </div>
-          </div>
+            <h3 className="card__title">
+                {post.title}
           <p className="card__excerpt">{post.description}</p>
+            </h3>
+            {/* Toggle Slider */}
+          </div>
         </div>
         
         <AnimatePresence>

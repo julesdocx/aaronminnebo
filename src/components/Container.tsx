@@ -26,13 +26,9 @@ export default function Container({ children }: { children: React.ReactNode }) {
       <header className="header">
         <div 
           className='header_container'
-          style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', cursor: 'pointer' }}
+          style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer' }}
           onClick={toggleHeader}
         >
-          <h1 className="header__title">
-              Aaron Minnebo
-          </h1>
-          {/* Toggle Slider */}
           <div 
             className="toggle-slider"
             style={{
@@ -70,6 +66,10 @@ export default function Container({ children }: { children: React.ReactNode }) {
               whileHover="hover"
             />
           </div>
+          <h1 className="header__title">
+              Aaron Minnebo
+          </h1>
+          {/* Toggle Slider */}
         </div>
         
         <AnimatePresence>
