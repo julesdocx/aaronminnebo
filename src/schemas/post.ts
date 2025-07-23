@@ -38,8 +38,10 @@ export default defineType({
     defineField({
       name: 'date',
       title: 'Date',
-      type: 'text',
-      rows: 1,
+      type: 'date', // ✅ built-in date type
+      options: {
+        dateFormat: 'YYYY-MM-DD',
+      },
     }),
     defineField({
       name: 'description',

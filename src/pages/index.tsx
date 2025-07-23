@@ -92,14 +92,18 @@ export default function IndexPage({
           post.tags?.some((tag) => activeTags.includes(tag))
         )
 
+  const sortedPosts = filteredPosts
+  .slice() // clone to avoid mutating original
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+
   return (
     <Container>
       <div id="mainDiv">
         <section>
           <AnimatePresence mode="popLayout">
             <div className="posts__container">
-              {filteredPosts.length ? (
-                filteredPosts
+              {sortedPosts.length ? (
+                sortedPosts
                   .slice()
                   .reverse()
                   .map((post) => (
