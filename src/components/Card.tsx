@@ -36,7 +36,7 @@ export default function Card({ post }: { post: Post }) {
                 position: 'relative',
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
-                marginTop: '8px'
+                marginTop: '6px'
               }}
             >
               <motion.div 
@@ -63,7 +63,6 @@ export default function Card({ post }: { post: Post }) {
             </div>
             <h3 className="card__title">
                 {post.title}
-          <p className="card__excerpt">{post.description}</p>
             </h3>
             {/* Toggle Slider */}
           </div>
@@ -72,17 +71,18 @@ export default function Card({ post }: { post: Post }) {
         <AnimatePresence>
           {isExpanded && (
             <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ 
-                duration: 0.4, 
-                ease: "easeInOut",
-                opacity: { duration: 0.3 }
-              }}
-              style={{ overflow: 'hidden' }}
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ 
+              duration: 0.4, 
+              ease: "easeInOut",
+              opacity: { duration: 0.3 }
+            }}
+            style={{ overflow: 'hidden' }}
             >
               <div style={{ padding: '10px 0' }}>
+            <p className="card__excerpt">{post.description}</p>
                 <p className='card__function'>{post.function}</p>
                 <p className='card__caption'> {post.director}</p>
                 {post.mainImage ? (

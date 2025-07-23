@@ -12,7 +12,7 @@ header {
 
 @media (max-width: 750px) {
    .container {
-    margin-top: 12px;
+    margin-top: 12px ;
     display: flex;
     flex-direction: column;
    }

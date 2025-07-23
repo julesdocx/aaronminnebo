@@ -21,6 +21,15 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'tags',
+      type: 'array',
+      title: 'Tags',
+      of: [{ type: 'string' }],
+      options: {
+        layout: 'tags', // This gives a "tag input" UI
+      },
+    }),
+    defineField({
       name: 'function',
       title: 'Function',
       type: 'text',

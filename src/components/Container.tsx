@@ -85,7 +85,7 @@ export default function Container({ children }: { children: React.ReactNode }) {
               }}
               style={{ overflow: 'hidden' }}
             >
-              <div style={{ padding: '10px 0' }}>
+              <div style={{ padding: '0px 0' }}>
                 <p>Brussels / Antwerp<br />aaron.minnebo @ email.com</p>
                 {/* <p>I'm a Belgian film editor with a fresh perspective and a deep passion for storytelling. I graduated in 2023 with a Master's degree in Editing from RITCS School of Arts. Since graduating, I've had the privilege of working on several short films, both national and international, and assisting acclaimed filmmakers and editors. These experiences have honed my skills and deepened my understanding of the collaborative nature of filmmaking. </p> */}
               </div>
