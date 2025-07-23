@@ -7,3 +7,4 @@ export const schemaTypes = [post, blockContent]
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [post, blockContent],
 }
+ 

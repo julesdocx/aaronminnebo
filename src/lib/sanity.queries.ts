@@ -45,16 +45,11 @@ export const tagsQuery = groq`*[_type == "tag"]{_id, name}`
 
 export async function getTags(
   client: SanityClient,
-): Promise<Tag[]> {
+): Promise<string[]> {
   return await client.fetch(tagsQuery)
 }
 
 // 🔠 Types
-
-export interface Tag {
-  _id: string
-  name: string
-}
 
 export interface Post {
   _type: 'post'
@@ -69,5 +64,5 @@ export interface Post {
   description?: string
   mainImage?: ImageAsset
   body: PortableTextBlock[]
-  tags?: Tag[]
+  tags?: string[]
 }
