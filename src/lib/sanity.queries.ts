@@ -11,11 +11,8 @@ export const postsQuery = groq`*[_type == "post" && defined(slug.current)] | ord
   title,
   slug,
   date,
-  function,
-  subtitle,
-  director,
-  description,
   mainImage,
+  gallery,
   body,
   tags 
 }`
@@ -58,11 +55,16 @@ export interface Post {
   title?: string
   slug: Slug
   date: string
-  function: String
-  subtitle: string
-  director: string
-  description?: string
   mainImage?: ImageAsset
   body: PortableTextBlock[]
   tags?: string[]
+  gallery?: {
+    asset: {
+      _ref: string
+      _type: 'reference'
+    }
+    _key?: string
+    _type: 'image'
+    alt?: string
+  }[]
 }

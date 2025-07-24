@@ -30,12 +30,6 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'function',
-      title: 'Function',
-      type: 'text',
-      rows: 1,
-    }),
-    defineField({
       name: 'date',
       title: 'Date',
       type: 'date', // ✅ built-in date type
@@ -44,24 +38,23 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'description',
-      title: 'Description',
-      type: 'text',
-      rows: 1,
-    }),
-    defineField({
-      name: 'director',
-      title: 'Director or Collaborator',
-      type: 'text',
-      rows: 1,
-    }),
-    defineField({
       name: 'mainImage',
       title: 'Main image',
       type: 'image',
       options: {
         hotspot: true,
       },
+    }),
+        defineField({
+      name: 'gallery',
+      title: 'Gallery',
+      type: 'array',
+      of: [
+        {
+          type: 'image',
+          options: { hotspot: true }, // optional: enables focal point editing
+        },
+      ],
     }),
     defineField({
       name: 'body',

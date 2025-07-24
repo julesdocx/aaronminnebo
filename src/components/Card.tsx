@@ -1,15 +1,19 @@
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { urlForImage } from '~/lib/sanity.image'
 import { type Post } from '~/lib/sanity.queries'
 import { PortableText } from '@portabletext/react'
 import { motion, AnimatePresence } from 'motion/react';
 
-export default function Card({ post }: { post: Post }) {
+export default function Card({ post, expandAll }: { post: Post, expandAll?: boolean }) {
   const [isExpanded, setIsExpanded] = useState(false)
   const toggleAccordion = () => {
     setIsExpanded(!isExpanded)
   }
+
+      useEffect(() => {
+      setIsExpanded(expandAll ?? false)
+    }, [expandAll])
 
   return (
     <motion.div
@@ -82,9 +86,6 @@ export default function Card({ post }: { post: Post }) {
             style={{ overflow: 'hidden' }}
             >
               <div style={{ padding: '10px 0' }}>
-            <p className="card__excerpt">{post.description}</p>
-                <p className='card__function'>{post.function}</p>
-                <p className='card__caption'> {post.director}</p>
                 {post.mainImage ? (
                   <div className="image-container">
                     <Image
@@ -106,6 +107,20 @@ export default function Card({ post }: { post: Post }) {
                   <PortableText value={post.body} />
                 </div>
               </div>
+              {post.gallery && post.gallery.length > 0 && (
+                <div className="gallery">
+                  {post.gallery.map((image, i) => (
+                    <Image
+                      key={image._key || i}
+                      src={urlForImage(image).url()}
+                      alt={image.alt || `Gallery image ${i + 1}`}
+                      width={600}
+                      height={400}
+                      style={{ width: '100%', height: 'auto', marginBottom: '1rem' }}
+                    />
+                  ))}
+                </div>
+              )}
             </motion.div>
           )}
         </AnimatePresence>

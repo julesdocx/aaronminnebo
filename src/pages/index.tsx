@@ -45,9 +45,14 @@ export default function IndexPage({
   const router = useRouter()
   const [posts] = useLiveQuery<Post[]>(initialPosts, postsQuery)
   const [activeTags, setActiveTags] = useState<string[]>([])
+  const [expandAll, setExpandAll] = useState(false)
 
   // ✅ All tags (as strings)
   const allTags = Array.from(new Set(posts.flatMap((p) => p.tags || [])))
+
+  const toggleExpandAll = () => {
+    setExpandAll((prev) => !prev)
+  }
 
   useEffect(() => {
     const urlTags = router.query.tags
@@ -94,7 +99,7 @@ export default function IndexPage({
 
   const sortedPosts = filteredPosts
   .slice() // clone to avoid mutating original
-  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).reverse()
 
   return (
     <Container>
@@ -115,7 +120,7 @@ export default function IndexPage({
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <Card post={post} />
+                      <Card post={post} expandAll={expandAll} />
                     </motion.div>
                   ))
               ) : (
@@ -155,6 +160,54 @@ export default function IndexPage({
                 }}
                 onClick={(e) => e.stopPropagation()}
               >
+                     { (
+                       <div
+                      onClick={toggleExpandAll}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '12px',
+                        cursor: 'pointer',
+                        fontSize: '0.85rem',
+                      }}
+                    >
+                     <div
+                        className="toggle-slider"
+                        style={{
+                          width: '20px',
+                          height: '10px',
+                          backgroundColor: 'white',
+                          border: expandAll
+                            ? '1px solid black'
+                            : '1px solid grey',
+                          opacity: '30%',
+                          borderRadius: '10px',
+                          position: 'relative',
+                          cursor: 'pointer',
+                          transition: 'all 0.3s ease',
+                        }}
+                      >
+                        <motion.div
+                          className="toggle-circle"
+                          style={{
+                            width: '8px',
+                            height: '8px',
+                            borderRadius: '50%',
+                            position: 'absolute',
+                            top: '1px',
+                            left: expandAll ? '11px' : '1px',
+                            transition: 'left 0.3s ease',
+                          }}
+                          animate={{
+                            backgroundColor: expandAll ? 'black' : 'grey',
+                          }}
+                        />
+                      </div>
+                      <span style={{ color: expandAll ? 'black' : 'grey' }}>
+                        Collapse All
+                      </span>
+                    </div>
+                    )}
                 {allTags.map((tag) => {
                   const isActive = activeTags.includes(tag)
                   return (
