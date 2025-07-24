@@ -55,7 +55,7 @@ p {
 @media (max-width: 750px) {
    #mainDiv {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
    }
    h1 {
     margin: 6px 0px;
