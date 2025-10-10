@@ -20,7 +20,6 @@ export const getStaticProps: GetStaticProps<
   const client = getClient(draftMode ? { token: readToken } : undefined)
   const posts = await getPosts(client)
 
-  // ✅ Extract unique tags from post tags (strings)
   const tagSet = new Set<string>()
   posts.forEach((post) => {
     post.tags?.forEach((tag) => tagSet.add(tag))

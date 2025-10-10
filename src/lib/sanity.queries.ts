@@ -3,7 +3,7 @@ import type { ImageAsset, Slug } from '@sanity/types'
 import groq from 'groq'
 import { type SanityClient } from 'next-sanity'
 
-// 📰 POSTS
+// 🔍 Everything renamed from "project" → "post"
 
 export const postsQuery = groq`*[_type == "post" && defined(slug.current)] | order(_createdAt desc) {
   _id,
@@ -35,16 +35,6 @@ export async function getPost(
 export const postSlugsQuery = groq`
   *[_type == "post" && defined(slug.current)][].slug.current
 `
-
-// 🏷 TAGS
-
-export const tagsQuery = groq`*[_type == "tag"]{_id, name}`
-
-export async function getTags(
-  client: SanityClient,
-): Promise<string[]> {
-  return await client.fetch(tagsQuery)
-}
 
 // 🔠 Types
 

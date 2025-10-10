@@ -15,6 +15,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+    "types": ["node", "jest"], // add other global types you need
     "plugins": [
       {
         "name": "next"

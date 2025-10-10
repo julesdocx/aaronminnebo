@@ -11,7 +11,6 @@ import {
   IframeOptions,
 } from 'sanity-plugin-iframe-pane'
 import { previewUrl } from 'sanity-plugin-iframe-pane/preview-url'
-import { vercelDeployTool } from 'sanity-plugin-vercel-deploy'
 
 
 // see https://www.sanity.io/docs/api-versioning for how versioning works
@@ -34,14 +33,13 @@ const iframeOptions = {
 
 export default defineConfig({
   basePath: '/studio',
-  name: 'project-name',
-  title: 'Project Name',
+  name: 'aaronminnebo-studio',
+  title: 'aaronminnebo',
   projectId,
   dataset,
   //edit schemas in './src/schemas'
   schema,
   plugins: [
-    vercelDeployTool(),
     deskTool({
       // `defaultDocumentNode` is responsible for adding a “Preview” tab to the document pane
       // You can add any React component to `S.view.component` and it will be rendered in the pane

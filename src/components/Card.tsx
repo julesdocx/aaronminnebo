@@ -17,9 +17,6 @@ export default function Card({ post, expandAll }: { post: Post, expandAll?: bool
 
   return (
     <motion.div
-      transition={{
-        type: "linear"
-      }}
       className={`card ${isExpanded ? "expanded": "" }`}  
       onClick={toggleAccordion}
       whileHover="hover"
