@@ -62,10 +62,16 @@ export default function Card({ post, expandAll }: { post: Post, expandAll?: bool
                 }}
               />
             </div>
-            <h3 className="card__title">
+            <div className="card__title">
+              <h3>
                 {post.title}
-            </h3>
-            {/* Toggle Slider */}
+              </h3>
+              {post.subtitle && (
+                <div className="card__subtitle">
+                  <PortableText value={post.subtitle} />
+                </div>
+              )}
+            </div>
           </div>
         </div>
         
@@ -82,7 +88,7 @@ export default function Card({ post, expandAll }: { post: Post, expandAll?: bool
             }}
             style={{ overflow: 'hidden' }}
             >
-              <div style={{ padding: '10px 0' }}>
+              <div className="card__content" style={{ padding: '10px 0' }}>
                 {post.mainImage ? (
                   <div className="image-container">
                     <Image
@@ -100,7 +106,7 @@ export default function Card({ post, expandAll }: { post: Post, expandAll?: bool
                 ) : (
                   <div className="post__cover--none" />
                 )}
-                <div className="card__content">
+                <div>
                   <PortableText value={post.body} />
                 </div>
               </div>

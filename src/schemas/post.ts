@@ -11,6 +11,11 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'subtitle',
+      title: 'Subtitle',
+      type: 'blockContent',
+    }),
+    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -45,7 +50,7 @@ export default defineType({
         hotspot: true,
       },
     }),
-        defineField({
+      defineField({
       name: 'gallery',
       title: 'Gallery',
       type: 'array',

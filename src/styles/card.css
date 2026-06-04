@@ -1,4 +1,27 @@
 .card {
     cursor: pointer;
     user-select: none;
+    border-bottom: 1px solid var(--border-color, #e0e0e0);
+}
+.card__header {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 12px;
+}
+
+.card__title {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.card__subtitle {
+    font-size: 12px;
+    color: var(--text-secondary-color, #a4a3a3);
+    line-height: 16px;
+    margin-top: 4px;
+}
+
+.card__content {
+    margin: 0px 12px;
+    border-bottom: 1px solid var(--border-color, #e0e0e0);
 }

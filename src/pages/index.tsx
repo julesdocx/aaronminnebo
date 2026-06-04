@@ -135,8 +135,11 @@ export default function IndexPage({
             </div>
           </AnimatePresence>
         </section>
-
-        <section>
+            <div className="header">
+              <h1><strong>Aaron Minnebo</strong></h1>
+              <p>Belgium </p>
+            </div>
+        {/* <section>
           <AnimatePresence>
             <div
               style={{
@@ -147,7 +150,6 @@ export default function IndexPage({
                 cursor: 'pointer',
               }}
             >
-              {/* === Tag Toggles === */}
               <div
                 className="tags_container"
                 style={{
@@ -262,7 +264,7 @@ export default function IndexPage({
               </div>
             </div>
           </AnimatePresence>
-        </section>
+        </section> */}
       </div>
     </Container>
   )
