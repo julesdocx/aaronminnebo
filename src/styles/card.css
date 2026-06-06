@@ -16,12 +16,27 @@
 }
 .card__subtitle {
     font-size: 12px;
-    color: var(--text-secondary-color, #a4a3a3);
+    color: var(--text-secondary-color, #5a5a5a);
     line-height: 16px;
     margin-top: 4px;
 }
 
+.card__subtitle strong {
+    color: var(--text-primary-color, #5a5a5a);
+}
+
+
 .card__content {
     margin: 0px 12px;
     border-bottom: 1px solid var(--border-color, #e0e0e0);
+}
+
+.card__header-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card__title-text {
+    padding-right: 8px;
 }

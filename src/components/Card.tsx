@@ -24,7 +24,7 @@ export default function Card({ post, expandAll }: { post: Post, expandAll?: bool
     >
       <div className="card__container">
         <div className="card__header">
-          <div style={{ display: 'flex', alignItems: 'start', gap: '12px' }}>
+          <div className="card__header-content" style={{ display: 'flex', alignItems: 'start', gap: '8px' }}>
             <div 
               className="toggle-slider"
               style={{
@@ -63,7 +63,7 @@ export default function Card({ post, expandAll }: { post: Post, expandAll?: bool
               />
             </div>
             <div className="card__title">
-              <h3>
+              <h3 className="card__title-text">
                 {post.title}
               </h3>
               {post.subtitle && (
