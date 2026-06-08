@@ -45,7 +45,13 @@ export default function IndexPage({
   const [posts] = useLiveQuery<Post[]>(initialPosts, postsQuery)
   const [activeTags, setActiveTags] = useState<string[]>([])
   const [expandAll, setExpandAll] = useState(false)
+const [copied, setCopied] = useState(false)
 
+const handleCopyEmail = () => {
+  navigator.clipboard.writeText('aaronminnebo@gmail.com')
+  setCopied(true)
+  setTimeout(() => setCopied(false), 2000)
+}
   // ✅ All tags (as strings)
   const allTags = Array.from(new Set(posts.flatMap((p) => p.tags || [])))
 
@@ -138,6 +144,24 @@ export default function IndexPage({
             <div className="header">
               <h1><strong>Aaron Minnebo</strong></h1>
               <p>Belgium </p>
+              <a href=""
+                href=""
+                onClick={(e) => {
+                  e.preventDefault()
+                  handleCopyEmail()
+                }}
+              >
+                aaronminnebo@gmail.com
+              </a>
+              <button
+                onClick={handleCopyEmail}
+                style={{
+                  marginLeft: '8px',
+                  cursor: 'pointer',
+                }}
+              >
+                {copied ? 'Copied!' : 'copy'}
+              </button>
             </div>
         {/* <section>
           <AnimatePresence>

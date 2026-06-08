@@ -48,7 +48,7 @@ export default function Card({ post, expandAll }: { post: Post, expandAll?: bool
                   borderRadius: '50%',
                   position: 'absolute',
                   top: '1px',
-                  left: isExpanded ? '11px' : '1px',
+                  left: isExpanded ? '10px' : '1px',
                   transition: 'left 0.3s ease'
                 }}
                 variants={{
