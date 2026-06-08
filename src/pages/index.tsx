@@ -145,7 +145,6 @@ const handleCopyEmail = () => {
               <h1><strong>Aaron Minnebo</strong></h1>
               <p>Belgium </p>
               <a href=""
-                href=""
                 onClick={(e) => {
                   e.preventDefault()
                   handleCopyEmail()
